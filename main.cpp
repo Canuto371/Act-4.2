@@ -63,9 +63,20 @@ int main() {
         cout << "El grafo no es un árbol." << endl << endl;
     }
 
-    // Realiza el ordenamiento topológico del grafo
-    grafo.topologicalSort();
-    cout << endl;
+    // Crear el vector visitado como una variable separada
+    // Se usará en 'isCyclicRecursive'
+    vector<bool> visitado(n, false);
+    // Verificar si el grafo es acíclico antes de realizar el ordenamiento topológico
+    // Si el grafo NO contiene ciclos, procedemos a hacer el ordenamiento topológico.
+    if (!grafo.isCyclicUtil(0, visitado, -1)) {
+        cout << "Ordenamiento topológico del grafo: ";
+        grafo.topologicalSort();  // Llamar al método topologicalSort para ordenar los nodos
+        cout << endl;
+    } else {
+        // Si el grafo contiene ciclos, el ordenamiento topológico no es posible,
+        // así que informamos al usuario de esta limitación.
+        cout << "El grafo contiene ciclos, por lo que no se puede realizar el ordenamiento topológico." << endl << endl;
+    }
 
 
     // Verifica si el grafo es bipartito
