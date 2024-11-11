@@ -25,7 +25,7 @@ void Grafo::addEdge(int u, int v) {
 void Grafo::loadGraph() {
     int u, v;
     cout << "-------------------------------------------------------" << endl;
-    cout << "Ingrese los arcos en formato de pares de vertices u v:" << endl;
+    cout << "Ingrese los arcos en formato de pares de vértices u v:" << endl;
     cout << "-------------------------------------------------------" << endl << endl;
     
     //Bucle para asegurar que la entrada sea válida: 

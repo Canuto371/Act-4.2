@@ -18,9 +18,9 @@ int main() {
     cout << "*Bienvenido al programa de Grafo*" << endl;
     cout << "*********************************\n" << endl;
 
-    cout << "Ingrese el numero de vertices: ";
+    cout << "Ingrese el número de vértices: ";
     cin >> n;
-    cout << "Ingrese el numero de arcos: ";
+    cout << "Ingrese el número de arcos: ";
     cin >> m;
     cout << " " <<endl; 
 
@@ -29,11 +29,11 @@ int main() {
 
     // Verifica si el grafo es un árbol
     cout << "\n--------------------------------------------" << endl;
-    cout << "Verificando si el grafo es un arbol..." << endl;
+    cout << "Verificando si el grafo es un árbol..." << endl;
     if (grafo.isTree()) {
-        cout << "El grafo es un arbol." << endl;
+        cout << "El grafo es un árbol." << endl;
     } else {
-        cout << "El grafo no es un arbol." << endl;
+        cout << "El grafo no es un árbol." << endl;
     }
     cout << "--------------------------------------------" << endl;
 
