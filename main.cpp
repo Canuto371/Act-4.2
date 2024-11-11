@@ -7,7 +7,10 @@ using namespace std;
 // Elizabeth Jauregui Zarate (A01253381)
 
 /*  
-El presente programa implementa 
+El presente programa implementa  un programa para analizar un grafo no dirigido utilizando una clase Grafo.
+Solicita al usuario que ingrese el número de vértices (n) y arcos (m) del grafo. 
+Inicializa el grafo con V vértices y E arcos, y configura la lista de adyacencia como un vector de vectores de enteros.
+Comprueba si el grafo es un árbol, si se puede ordenar topológicamente y si es bipartito.
 */  
 
 int main() {
