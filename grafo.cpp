@@ -90,7 +90,7 @@ void Grafo::topologicalSort() {
         if (!visited[i])
             topologicalSortUtil(i, visited, Stack); 
 
-    cout << "Orden Topologico: ";
+    cout << "Orden Topológico: ";
     while (!Stack.empty()) {
         cout << Stack.top() << " ";
         Stack.pop();

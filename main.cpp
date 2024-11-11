@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdexcept>
 #include "grafo.cpp"
 
 using namespace std;
@@ -21,11 +22,40 @@ int main() {
     cout << "*Bienvenido al programa de Grafo*" << endl;
     cout << "*********************************\n" << endl;
 
-    cout << "Ingrese el número de vértices: ";
-    cin >> n;
-    cout << "Ingrese el número de arcos: ";
-    cin >> m;
-    cout << " " <<endl; 
+    // Bucle para validar la entrada de número de vértices
+    while (true) {
+        try {
+            cout << "Ingrese el número de vértices: ";
+            cin >> n;
+
+            if (cin.fail() || n <= 0) {
+                throw invalid_argument("Debe ingresar un número entero positivo.");
+            }
+            break; // Salir del bucle si la entrada es válida
+        } catch (const invalid_argument& e) {
+            cin.clear(); // Limpia el estado de error de cin
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Descarta la entrada inválida
+            cerr << "Error: " << e.what() << endl;
+        }
+    }
+
+    // Bucle para validar la entrada de número de arcos
+    while (true) {
+        try {
+            cout << "Ingrese el número de arcos: ";
+            cin >> m;
+
+            if (cin.fail() || m <= 0) {
+                throw invalid_argument("Debe ingresar un número entero positivo.");
+            }
+            break; // Salir del bucle si la entrada es válida
+        } catch (const invalid_argument& e) {
+            cin.clear(); // Limpia el estado de error de cin
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Descarta la entrada inválida
+            cerr << "Error: " << e.what() << endl;
+        }
+    }
+    cout << " " << endl; 
 
     Grafo grafo(n, m); // Crea el objeto grafo
     grafo.loadGraph(); // Carga el grafo con los arcos ingresados por el usuario
@@ -42,7 +72,7 @@ int main() {
 
     // Realiza el ordenamiento topológico del grafo
     cout << "\n--------------------------------------------" << endl;
-    cout << "Realizando el ordenamiento topologico..." << endl;
+    cout << "Realizando el ordenamiento topológico..." << endl;
     grafo.topologicalSort();
     cout << "--------------------------------------------" << endl;
 
@@ -59,6 +89,7 @@ int main() {
     cout << "\n****************************" << endl;
     cout << "*Fin del analisis del Grafo*" << endl;
     cout << "****************************\n" << endl;
+
 
     return 0;
 }
