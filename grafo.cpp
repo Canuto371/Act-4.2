@@ -39,9 +39,9 @@ void Grafo::loadGraph() {
             if (cin.fail()) { // Verifica si la entrada no es válida
                 cin.clear();
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                cerr << "Error: Entrada no valida. Intente de nuevo." << endl;
+                cerr << "Error: Entrada no válida. Intente de nuevo." << endl;
             } else if (u < 0 || u >= V || v < 0 || v >= V) { // Verifica si los vértices están en el rango
-                cerr << "Error: Los vertices deben estar en el rango [0, " << V - 1 << "]. Intente de nuevo." << endl;
+                cerr << "Error: Los vértices deben estar en el rango [0, " << V - 1 << "]. Intente de nuevo." << endl;
             } else {
                 validInput = true; // Entrada válida
                 addEdge(u, v); // Agrega el arco
