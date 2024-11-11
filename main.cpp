@@ -16,12 +16,6 @@ Comprueba si el grafo es un árbol, si se puede ordenar topológicamente y si es
 
 int main() {
     int n, m;
-
-    // Solicita al usuario el número de vértices y arcos del grafo
-    cout << "\n*********************************" << endl;
-    cout << "*Bienvenido al programa de Grafo*" << endl;
-    cout << "*********************************\n" << endl;
-
     // Bucle para validar la entrada de número de vértices
     while (true) {
         try {
@@ -61,35 +55,25 @@ int main() {
     grafo.loadGraph(); // Carga el grafo con los arcos ingresados por el usuario
 
     // Verifica si el grafo es un árbol
-    cout << "\n--------------------------------------------" << endl;
-    cout << "Verificando si el grafo es un árbol..." << endl;
     if (grafo.isTree()) {
-        cout << "El grafo es un árbol." << endl;
+        cout << endl;
+        cout << "El grafo es un árbol." << endl << endl;
     } else {
-        cout << "El grafo no es un árbol." << endl;
+        cout << endl;
+        cout << "El grafo no es un árbol." << endl << endl;
     }
-    cout << "--------------------------------------------" << endl;
 
     // Realiza el ordenamiento topológico del grafo
-    cout << "\n--------------------------------------------" << endl;
-    cout << "Realizando el ordenamiento topológico..." << endl;
     grafo.topologicalSort();
-    cout << "--------------------------------------------" << endl;
+    cout << endl;
+
 
     // Verifica si el grafo es bipartito
-    cout << "\n--------------------------------------------" << endl;
-    cout << "Verificando si el grafo es bipartito..." << endl;
     if (grafo.bipartiteGraph()) {
         cout << "El grafo es bipartito." << endl;
     } else {
         cout << "El grafo no es bipartito." << endl;
     }
-    cout << "--------------------------------------------" << endl;
-
-    cout << "\n****************************" << endl;
-    cout << "*Fin del analisis del Grafo*" << endl;
-    cout << "****************************\n" << endl;
-
 
     return 0;
 }
